@@ -40,7 +40,7 @@ php composer update
 Далее, мигрируем базу:
 
 ```
-php yii migrate --migrationPath=vendor/dvizh/yii2-field/migrations
+php yii migrate --migrationPath=vendor/dvizh/yii2-field/src/migrations
 ```
 
 Подключение и настройка
