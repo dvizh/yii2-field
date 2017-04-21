@@ -1,0 +1,22 @@
+.dvizh-field ul.field-variants {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.dvizh-field .field-variants li {
+    width: 170px;
+    float: left;
+    padding: 3px;
+    margin: 1px;
+    float: left;
+    list-style: none;
+}
+
+.dvizh-field .new-variant {
+    clear: both;
+}
+
+.dvizh-field .new-variant input {
+    margin-right: 2px;
+    width: 150px;
+    display: inline;
+}
