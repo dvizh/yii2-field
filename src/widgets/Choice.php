@@ -9,6 +9,8 @@ use Yii;
 class Choice extends \yii\base\Widget
 {
     public $model = NULL;
+    public $includeId = NULL;
+    public $excludeId = NULL;
 
     public function init()
     {
@@ -21,6 +23,10 @@ class Choice extends \yii\base\Widget
         $model = $this->model;
 
         foreach($model->fields as $field) {
+            if(!is_null($this->includeId)) {
+                if(!isset($this->includeId[$field->id]))continue;
+            }
+            if(isset($this->excludeId[$field->id]))continue;
             $row = $this->renderField($field);
             $return[] = Html::tag('div', implode('', $row), ['class' => ' panel panel-default']);
         }
