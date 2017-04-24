@@ -6,29 +6,31 @@ dvizh.fieldvariant = {
     csrf_param: '_csrf',
     csrf_token: '',
     init: function() {
-        $(document).on('change', '.dvizh-field input[type=radio], input[type=checkbox], .dvizh-field select', this.choiceVariant);
+        jQuery(document).on('change', '.dvizh-field input[type=radio], input[type=checkbox], .dvizh-field select', this.choiceVariant);
 
-        dvizh.fieldvariant.csrf_param = $('meta[name="csrf-param"]').attr('content');
-        dvizh.fieldvariant.csrf_token = $('meta[name="csrf-token"]').attr('content');
+        dvizh.fieldvariant.csrf_param = jQuery('meta[name="csrf-param"]').attr('content');
+        dvizh.fieldvariant.csrf_token = jQuery('meta[name="csrf-token"]').attr('content');
     },
     choiceVariant: function() {
-        var li = $(this).parent();
+        var li = jQuery(this).parent();
 
-        var field_id = $(this).parents('.field-data-container').data('id');
-        var item_id = $(this).parents('.field-data-container').data('item-id');
-        var model_name = $(this).parents('.field-data-container').data('model-name');
+        jQuery(li).css('opacity', '0.3');
 
-        var create_action = $(this).parents('.field-data-container').data('create-action');
-        var update_action = $(this).parents('.field-data-container').data('update-action');
-        var delete_action = $(this).parents('.field-data-container').data('delete-action');
+        var field_id = jQuery(this).parents('.field-data-container').data('id');
+        var item_id = jQuery(this).parents('.field-data-container').data('item-id');
+        var model_name = jQuery(this).parents('.field-data-container').data('model-name');
 
-        if($(this).is('select') | $(this).is('input[type=radio]')) {
-            var variant_id = $(this).val();
+        var create_action = jQuery(this).parents('.field-data-container').data('create-action');
+        var update_action = jQuery(this).parents('.field-data-container').data('update-action');
+        var delete_action = jQuery(this).parents('.field-data-container').data('delete-action');
+
+        if(jQuery(this).is('select') | jQuery(this).is('input[type=radio]')) {
+            var variant_id = jQuery(this).val();
             if(variant_id <= 0) {
-                $.post(delete_action, {field_id: field_id, variant_id: variant_id, item_id: item_id},
+                jQuery.post(delete_action, {field_id: field_id, variant_id: variant_id, item_id: item_id},
                     function(json) {
                         if(json.result == 'success') {
-                            $(li).css('opacity', '1');
+                            jQuery(li).css('opacity', '1');
                         }
                         else {
                             alert('Error');
@@ -44,14 +46,14 @@ dvizh.fieldvariant = {
                 data.FieldValue.item_id = item_id;
                 data[dvizh.fieldvariant.csrf_param] = dvizh.fieldvariant.csrf_token;
 
-                $.post(update_action, data,
+                jQuery.post(update_action, data,
                     function(json) {
-                        $(li).css('opacity', '1');
+                        jQuery(li).css('opacity', '1');
                     }, "json");
             }
         }
-        else if($(this).prop('checked')) {
-            var variant_id = $(this).data('id');
+        else if(jQuery(this).prop('checked')) {
+            var variant_id = jQuery(this).data('id');
             var data = {};
             data.FieldValue = {};
             data.FieldValue.variant_id = variant_id;
@@ -59,17 +61,17 @@ dvizh.fieldvariant = {
             data.FieldValue.item_id = item_id;
             data[dvizh.fieldvariant.csrf_param] = dvizh.fieldvariant.csrf_token;
 
-            $.post(create_action, data,
+            jQuery.post(create_action, data,
                 function(json) {
-                    $(li).css('opacity', '1');
+                    jQuery(li).css('opacity', '1');
                 }, "json");
         }
         else {
-            var variant_id = $(this).data('id');
-            $.post(delete_action, {variant_id: variant_id, item_id: item_id},
+            var variant_id = jQuery(this).data('id');
+            jQuery.post(delete_action, {variant_id: variant_id, item_id: item_id},
                 function(json) {
                     if(json.result == 'success') {
-                        $(li).css('opacity', '1');
+                        jQuery(li).css('opacity', '1');
                     }
                     else {
                         alert('Error');

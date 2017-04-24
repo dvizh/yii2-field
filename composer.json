@@ -21,7 +21,8 @@
         "yiisoft/yii2-bootstrap": "*",
         "2amigos/yii2-grid-view-library": "*",
         "kartik-v/yii2-widget-select2": "*",
-        "kartik-v/yii2-grid": "*"
+        "kartik-v/yii2-grid": "*",
+        "asofter/yii2-imperavi-redactor": "dev-master@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",

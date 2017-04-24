@@ -85,6 +85,9 @@ class Choice extends \yii\base\Widget
             case 'checkbox':
                 $variants[] = types\Checkbox::widget(['field' => $field, 'model' => $this->model, 'options' => $options]);
                 break;
+            case 'wysiwyg':
+                $variants[] = types\Wysiwyg::widget(['field' => $field, 'model' => $this->model, 'options' => $options]);
+                break;
             default:
                 if(class_exists($field->type)) {
                     $class = $field->type;
