@@ -24,7 +24,7 @@ class Choice extends \yii\base\Widget
 
         foreach($model->fields as $field) {
             if(!is_null($this->includeId)) {
-                if(!isset($this->includeId[$field->id]))continue;
+                if(!isset($this->includeId[$field->id])) continue;
             }
             if(!is_null($this->excludeId)) {
                 if (isset($this->excludeId[$field->id])) continue;
