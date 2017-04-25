@@ -4,7 +4,7 @@
     "keywords": ["yii2", "yii2", "application", "fields", "module", "dvizh"],
     "homepage": "https://github.com/dvizh/yii2-field",
     "type": "yii2-extension",
-    "license": "BSD-3-Clause",
+    "license": "Apache",
     "support": {
         "source": "https://github.com/dvizh/yii2-field"
     },
@@ -22,7 +22,8 @@
         "2amigos/yii2-grid-view-library": "*",
         "kartik-v/yii2-widget-select2": "*",
         "kartik-v/yii2-grid": "*",
-        "asofter/yii2-imperavi-redactor": "dev-master@dev"
+        "asofter/yii2-imperavi-redactor": "dev-master@dev",
+        "zelenin/yii2-slug-behavior": "~1.5.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",
