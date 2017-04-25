@@ -6,6 +6,15 @@ use yii\helpers\ArrayHelper;
 
 class Field extends \yii\db\ActiveRecord
 {
+    function behaviors()
+    {
+        return [
+            'slug' => [
+                'class' => 'Zelenin\yii\behaviors\Slug',
+            ],
+        ];
+    }
+
     public static function tableName()
     {
         return '{{%field}}';
@@ -14,7 +23,7 @@ class Field extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'slug', 'relation_model'], 'required'],
+            [['name', 'relation_model'], 'required'],
             [['category_id'], 'integer'],
             [['name', 'type', 'description', 'relation_model'], 'string'],
             ['slug', 'unique'],
