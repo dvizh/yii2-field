@@ -3,9 +3,6 @@ use yii\helpers\Url;
 
 $this->title = 'Поля';
 $this->params['breadcrumbs'][] = $this->title;
-
-\dvizh\client\assets\BackendAsset::register($this);
-
 ?>
 <div class="model-index">
     <table class="table">
