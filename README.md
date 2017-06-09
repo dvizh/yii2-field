@@ -22,13 +22,13 @@ Yii2-field
 Выполнить команду
 
 ```
-php composer require dvizh/yii2-field "*"
+php composer require dvizh/yii2-field "@dev"
 ```
 
 Или добавить в composer.json
 
 ```
-"dvizh/yii2-field": "*",
+"dvizh/yii2-field": "@dev",
 ```
 
 И выполнить
