@@ -129,4 +129,6 @@ $productsFind = Product::find()->field('power', 100, '<')->all(); //Все за�
 ```
 
 Вывести все поля модели со значениями:
-<?=dvizh\field\widgets\Show::widget(['model' => $model]);?>				
+```php
+<?=dvizh\field\widgets\Show::widget(['model' => $model]);?>		
+```
