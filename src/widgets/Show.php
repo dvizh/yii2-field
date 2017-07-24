@@ -7,7 +7,8 @@ use yii;
 class Show extends \yii\base\Widget
 {
     public $model = NULL;
-
+    public $cssClass = 'dvizh-field-show';
+    
     public function init()
     {
         parent::init();
@@ -27,6 +28,6 @@ class Show extends \yii\base\Widget
             }
         }
         
-        return Html::ul($lis);
+        return Html::ul($lis, ['class' => $this->cssClass]);
     }
 }
