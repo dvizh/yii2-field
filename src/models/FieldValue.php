@@ -15,8 +15,8 @@ class FieldValue extends \yii\db\ActiveRecord
     {
         return [
             [['field_id', 'item_id'], 'required'],
-            [[], 'required'],
-            [['value', 'variant_id'], 'required', 'when' => function ($model) {
+            //[[], 'required'],
+            [['variant_id'], 'required', 'when' => function ($model) {
                 return empty($model->variant_id) && empty($model->value);
             }],
             [['field_id', 'item_id', 'variant_id', 'numeric_value'], 'integer'],
