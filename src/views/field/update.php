@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = 'Обновление';
                         'columns' => [
                             //['class' => 'yii\grid\SerialColumn'],
                             [
-                                'class' => \dosamigos\grid\EditableColumn::className(),
+                                'class' => \dosamigos\grid\columns\EditableColumn::className(),
                                 'attribute' => 'value',
                                 'filter' => false,
                                 'url' => ['edit-variant'],
