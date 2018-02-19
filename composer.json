@@ -4,7 +4,7 @@
     "keywords": ["yii2", "yii2", "application", "fields", "module", "dvizh"],
     "homepage": "https://github.com/dvizh/yii2-field",
     "type": "yii2-extension",
-    "license": "Apache",
+    "license": "Apache-2.0",
     "support": {
         "source": "https://github.com/dvizh/yii2-field"
     },
